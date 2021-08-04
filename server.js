@@ -84,8 +84,9 @@ MongoClient.connect(url, (err, db) => {
     }
 });
 
-const port = 3000;
+const PORT = process.env.PORT ||
+5000;
 
-app.listen(port, () => {
-    console.log(`Server started and listening on Port ${port}.`);
+app.listen(PORT, () => {
+    console.log(`Server started and listening on port ${PORT}.`);
 });
