@@ -56,7 +56,7 @@ MongoClient.connect(url, (err, db) => {
             {
                 email: req.body.email,
                 password: req.body.password
-            }
+            };
 
             collection.findOne(query, (err, result) => {
 
@@ -77,11 +77,15 @@ MongoClient.connect(url, (err, db) => {
                 }
             });
         });
+
+        app.get("/", (req, res) => {
+            res.send(`If this message is seen after deployment to Heroku, congrats the backend is now hosted.`);
+        });
     }
 });
 
 const port = 3000;
 
 app.listen(port, () => {
-    console.log(`Server started and listening on Port ${port}.`)
+    console.log(`Server started and listening on Port ${port}.`);
 });
