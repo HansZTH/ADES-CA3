@@ -79,7 +79,7 @@ MongoClient.connect(url, (err, db) => {
         });
 
         app.get("/", (req, res) => {
-            res.send(`If this message is seen after deployment to Heroku, congrats the backend is now hosted.`);
+            res.send(`If you can see this message on Heroku, congrats the backend/server is hosted.`);
         });
     }
 });
